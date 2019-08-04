@@ -327,17 +327,18 @@ inside #map {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-width: 768px;
 }
 
 #restaurant-container {
   flex-direction: column;
+  max-width: 768px;
 }
 #reviews-container {
   /* padding: 30px 40px 80px; */
   padding-top: 30px;
   padding-bottom: 80px;
   flex-direction: row;
+  max-width: 1024px;
 }
 #reviews-container h2 {
   color: #f58500;

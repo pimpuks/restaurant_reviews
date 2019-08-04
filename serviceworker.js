@@ -33,7 +33,6 @@ self.addEventListener('install', event => {
   ];
   event.waitUntil(
     caches.open(STATIC_CACHE).then(cache => {
-      console.log(`adding URLs to cache ${STATIC_CACHE}`);
       return cache.addAll(urlsToCache);
     })
   );

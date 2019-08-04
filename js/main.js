@@ -4,6 +4,21 @@ var newMap;
 var markers = [];
 
 /**
+ *  Register service worker for root scope
+ */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/serviceworker.js', { scope: '/' })
+    .then(reg => {
+      // registration worked
+      console.log('Registration succeeded. Scope is ' + reg.scope);
+    })
+    .catch(error => {
+      // registration failed
+      console.log('Registration failed with ' + error);
+    });
+}
+/**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', event => {
@@ -19,21 +34,6 @@ let observerOptions = {
   threshold: [0.01]
 };
 
-/**
- *  Register service worker for root scope
- */
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    .register('/serviceworker.js', { scope: '/' })
-    .then(reg => {
-      // registration worked
-      console.log('Registration succeeded. Scope is ' + reg.scope);
-    })
-    .catch(error => {
-      // registration failed
-      console.log('Registration failed with ' + error);
-    });
-}
 /**
  *  intersectionCallback function to load the image of the restanrant
  *  when the restaurant element meet the visibility threshold (1%)
