@@ -1,6 +1,6 @@
 console.log('Service worker is online', self || null);
-const CACHE_VERSION = 'v1';
-const STATIC_CACHE = `restaurant-reviews-cache-${CACHE_VERSION}`;
+const CACHE_VERSION = '1';
+const STATIC_CACHE = `restaurant-reviews-cache-v${CACHE_VERSION}`;
 
 self.addEventListener('install', event => {
   let urlsToCache = [
@@ -27,7 +27,9 @@ self.addEventListener('install', event => {
     'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css',
     'https://unpkg.com/leaflet@1.3.1/dist/leaflet.js',
     'https://unpkg.com/leaflet@1.3.1/dist/images/marker-icon.png',
-    'https://unpkg.com/leaflet@1.3.1/dist/images/marker-shadow.png'
+    'https://unpkg.com/leaflet@1.3.1/dist/images/marker-shadow.png',
+    'https://api.tiles.mapbox.com/v4/mapbox.streets/12/1205/1539.jpg70?access_token=pk.eyJ1IjoicGltcHVrcyIsImEiOiJjanltajR1cncwanF3M2lzOHJlbW54cTF3In0.BEqfumdmKy4IpCn1sA-xHw',
+    'https://api.tiles.mapbox.com/v4/mapbox.streets/12/1205/1540.jpg70?access_token=pk.eyJ1IjoicGltcHVrcyIsImEiOiJjanltajR1cncwanF3M2lzOHJlbW54cTF3In0.BEqfumdmKy4IpCn1sA-xHw'
   ];
   event.waitUntil(
     caches.open(STATIC_CACHE).then(cache => {
@@ -44,12 +46,29 @@ self.addEventListener('fetch', event => {
         resp ||
         fetch(event.request).then(response => {
           return caches.open(STATIC_CACHE).then(cache => {
-            console.log('store response from fetch to cache');
-            console.log(event.request);
             cache.put(event.request, response.clone());
             return response;
           });
         })
+      );
+    })
+  );
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames
+          .filter(cacheName => {
+            return (
+              cacheName.startsWith('restaurant-reviews-cache-') &&
+              cacheName != STATIC_CACHE
+            );
+          })
+          .map(cacheName => {
+            return cache.delete(cacheName);
+          })
       );
     })
   );
