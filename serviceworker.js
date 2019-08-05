@@ -3,7 +3,7 @@ const STATIC_CACHE = `restaurant-reviews-cache-v${CACHE_VERSION}`;
 
 self.addEventListener('install', event => {
   let urlsToCache = [
-    './',
+    // './',
     './index.html',
     './restaurant.html',
     './serviceworker.js',
@@ -12,7 +12,7 @@ self.addEventListener('install', event => {
     './js/dbhelper.js',
     './data/restaurants.json',
     './css/styles.css',
-    './img/',
+    // './img/',
     './img/1.jpg',
     './img/2.jpg',
     './img/3.jpg',
