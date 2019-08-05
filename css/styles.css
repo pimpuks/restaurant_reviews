@@ -90,12 +90,11 @@ nav h1 a {
   text-transform: uppercase;
 }
 #breadcrumb {
-  padding: 10px 40px 16px;
+  padding: 10px 40px 10px;
   list-style: none;
   background-color: #eee;
-  font-size: 17px;
+  font-size: 1.06rem;
   margin: 0;
-  /* width: calc(50% - 80px); */
   width: 100%;
 }
 
@@ -187,13 +186,14 @@ label {
   margin-top: 30px;
   padding: 0;
   max-width: 1140px;
-  /* padding: 30px 15px 60px; */
   text-align: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+
+  /* Grid styles */
+  display: grid;
   align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  justify-items: center;
 }
 
 #restaurants-list li {
@@ -242,49 +242,24 @@ label {
 }
 
 /* ====================== Restaurant Details ====================== */
-/* .inside header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-} */
-
-/* .inside header {
-  display: block;
-} */
+.inside nav {
+  display: flex;
+  flex-direction: column;
+  height: 128px;
+}
 .inside .skip-link {
-  /* display: inline-block; */
-  /* position: fixed; */
   margin: 10px 0;
   text-align: center;
   width: 100%;
   background: #fff;
 }
-/* .inside #map-container {
-  background: blue none repeat scroll 0 0;
-  height: 87%;
-  position: fixed;
-  right: 0;
-  top: 120px;
-  width: 100%;
-} */
-/* .inside #map {
-  background-color: #ccc;
-  height: 100%;
-  width: 100%;
-} */
 
-inside #map {
+.inside #map {
   background-color: #ccc;
   height: 45vh;
   width: 100%;
 }
 
-/* .inside #footer {
-  bottom: 0;
-  position: absolute;
-  /* width: 100%; */
-/*} */
 #restaurant-name {
   color: #f18200;
   font-family: Arial, sans-serif;
@@ -318,12 +293,10 @@ inside #map {
 #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  /* padding: 0px 40px 30px; */
   padding-top: 30px;
   width: 90%;
   margin: auto;
   display: flex;
-  /* flex-direction: row; */
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -334,7 +307,6 @@ inside #map {
   max-width: 768px;
 }
 #reviews-container {
-  /* padding: 30px 40px 80px; */
   padding-top: 30px;
   padding-bottom: 80px;
   flex-direction: row;
@@ -359,10 +331,8 @@ inside #map {
 #reviews-list li {
   background-color: #fff;
   border: 2px solid #f3f3f3;
-  /* display: block; */
   flex: 1;
   list-style-type: none;
-  /* margin: 0 0 30px; */
   overflow: hidden;
   padding: 0 20px 20px;
   position: relative;

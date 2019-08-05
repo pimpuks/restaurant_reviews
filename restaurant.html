@@ -26,14 +26,15 @@
       <!-- Beginning nav -->
       <nav>
         <h1><a href="/" title="Home Page">Restaurant Reviews</a></h1>
+        <!-- Beginning breadcrumb -->
+        <ul id="breadcrumb">
+          <li><a href="/" title="Home Page">Home</a></li>
+        </ul>
       </nav>
       <div class="skip-link">
         <a href="#restaurant-container" title="Skip to main">Skip to main</a>
       </div>
-      <!-- Beginning breadcrumb -->
-      <ul id="breadcrumb">
-        <li><a href="/" title="Home Page">Home</a></li>
-      </ul>
+
       <!-- End breadcrumb -->
       <!-- End nav -->
     </header>
@@ -42,7 +43,7 @@
     <!-- Beginning main -->
     <main id="maincontent">
       <!-- Beginning map -->
-      <section id="map-container">
+      <section id="map-container" role="application">
         <div id="map"></div>
       </section>
       <!-- End map -->
@@ -66,7 +67,8 @@
     <!-- Beginning footer -->
     <footer id="footer">
       Copyright (c) 2017
-      <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+      <a href="/" title="Home Page"><strong>Restaurant Reviews</strong></a> All
+      Rights Reserved.
     </footer>
     <!-- End footer -->
     <script

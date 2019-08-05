@@ -1,4 +1,3 @@
-console.log('Service worker is online', self || null);
 const CACHE_VERSION = '1';
 const STATIC_CACHE = `restaurant-reviews-cache-v${CACHE_VERSION}`;
 
