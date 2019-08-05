@@ -7,7 +7,6 @@ var markers = [];
  *  Register service worker for root scope
  */
 if ('serviceWorker' in navigator) {
-  console.log(location.pathname);
   navigator.serviceWorker
     .register('./serviceworker.js', { scope: location.pathname })
     .then(reg => {
