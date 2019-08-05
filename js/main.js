@@ -8,7 +8,7 @@ var markers = [];
  */
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('/serviceworker.js', { scope: '/' })
+    .register('../serviceworker.js', { scope: '/' })
     .then(reg => {
       // registration worked
       console.log('Registration succeeded. Scope is ' + reg.scope);
