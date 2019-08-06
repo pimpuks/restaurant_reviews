@@ -36,7 +36,6 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('fetch', event => {
-  console.log(event.request);
   event.respondWith(
     caches.match(event.request).then(resp => {
       return (
@@ -49,7 +48,7 @@ self.addEventListener('fetch', event => {
             });
           })
           .catch(response => {
-            console.log(response);
+            console.log('Exception in fetch ', response);
           })
       );
     })
