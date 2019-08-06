@@ -41,12 +41,16 @@ self.addEventListener('fetch', event => {
     caches.match(event.request).then(resp => {
       return (
         resp ||
-        fetch(event.request).then(response => {
-          return caches.open(STATIC_CACHE).then(cache => {
-            cache.put(event.request, response.clone());
-            return response;
-          });
-        })
+        fetch(event.request)
+          .then(response => {
+            return caches.open(STATIC_CACHE).then(cache => {
+              cache.put(event.request, response.clone());
+              return response;
+            });
+          })
+          .catch(response => {
+            console.log(response);
+          })
       );
     })
   );
