@@ -176,7 +176,7 @@ class DBHelper {
     const marker = new L.marker(
       [restaurant.latlng.lat, restaurant.latlng.lng],
       {
-        title: restaurant.name,
+        // title: restaurant.name,
         alt: restaurant.name,
         url: DBHelper.urlForRestaurant(restaurant)
       }
