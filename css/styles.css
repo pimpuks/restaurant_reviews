@@ -28,7 +28,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #3397db;
+  color: #256591;
   text-decoration: none;
 }
 a img {
@@ -142,7 +142,7 @@ nav h1 a {
   justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: #3397db;
+  background-color: #256591;
   align-items: center;
   padding: 10px 0;
 }
