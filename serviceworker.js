@@ -67,7 +67,7 @@ self.addEventListener('activate', event => {
             );
           })
           .map(cacheName => {
-            return cache.delete(cacheName);
+            return caches.delete(cacheName);
           })
       );
     })
