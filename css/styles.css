@@ -206,6 +206,7 @@ label {
   text-align: left;
   width: 270px;
 }
+
 #restaurants-list .restaurant-img {
   background-color: #ccc;
   display: block;
@@ -214,7 +215,7 @@ label {
   min-height: 248px;
   min-width: 100%;
 }
-#restaurants-list li h1 {
+#restaurants-list li h2 {
   color: #f18200;
   font-family: Arial, sans-serif;
   font-size: 14pt;
@@ -229,7 +230,7 @@ label {
   font-size: 11pt;
 }
 #restaurants-list li a {
-  background-color: orange;
+  background-color: #f58500;
   border-bottom: 3px solid #eee;
   color: #fff;
   display: inline-block;
@@ -314,11 +315,18 @@ label {
 }
 #reviews-container h2 {
   color: #f58500;
-  font-size: 24pt;
+  font-size: 1.5rem;
   font-weight: 300;
   letter-spacing: -1px;
   padding-bottom: 1pt;
 }
+
+#reviews-container h3 {
+  color: #f18200;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
 #reviews-list {
   margin: 0;
   padding: 0;

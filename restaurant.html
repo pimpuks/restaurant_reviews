@@ -27,11 +27,11 @@
       <nav>
         <h1><a href="./index.html" title="Home Page">Restaurant Reviews</a></h1>
         <!-- Beginning breadcrumb -->
-        <ul id="breadcrumb">
+        <ul id="breadcrumb" role="navigation" aria-label="Breadcrumb">
           <li><a href="./index.html" title="Home Page">Home</a></li>
         </ul>
       </nav>
-      <div class="skip-link">
+      <div class="skip-link" role="navigation">
         <a href="#restaurant-container" title="Restaurant Details"
           >Skip to main</a
         >
@@ -45,13 +45,13 @@
     <!-- Beginning main -->
     <main id="maincontent">
       <!-- Beginning map -->
-      <section id="map-container" role="application">
+      <section id="map-container" role="application" aria-label="location">
         <div id="map"></div>
       </section>
       <!-- End map -->
       <!-- Beginning restaurant -->
       <section id="restaurant-container" tabindex="-1">
-        <h1 id="restaurant-name"></h1>
+        <h2 id="restaurant-name"></h2>
         <img id="restaurant-img" />
         <p id="restaurant-cuisine"></p>
         <p id="restaurant-address"></p>
